@@ -31,7 +31,7 @@ export default class Users extends React.Component {
         {
           this.state.users.map((user) => (
             <Grid.Column key={user.id}>
-              <User profileImage={user.avatar_url} username={user.login} githubLink={user.html_url}/>
+              <User id={user.id} profileImage={user.avatar_url} username={user.login} githubLink={user.html_url}/>
             </Grid.Column>
           ))
         }

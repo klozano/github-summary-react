@@ -1,7 +1,8 @@
 import React from 'react';
 import { Card, Image, Icon } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
-const User = ({ profileImage, username, githubLink }) => (
+const User = ({ id, profileImage, username, githubLink }) => (
   <Card fluid>
     <Image src={profileImage} size="large"/>
     <Card.Content>
@@ -13,6 +14,9 @@ const User = ({ profileImage, username, githubLink }) => (
       <a target="_blank" href={githubLink}>
         <Icon name='github' />
       </a>
+      <Link to={`/repositories/${id}`}>
+        <Icon name="user" />
+      </Link>
     </Card.Content>
   </Card>
 );
