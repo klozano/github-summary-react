@@ -12,7 +12,7 @@ const App = () => (
       {/* Defined routes */}
       <Route exact path="/" component={Users}/>
       <Route path="/users" component={Users}/>
-      <Route path="/repositories/:userId" component={Repositories}/>
+      <Route path="/repositories/:username" component={Repositories}/>
     </div>
   </BrowserRouter>
 )

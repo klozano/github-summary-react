@@ -15,7 +15,7 @@ const User = ({ id, profileImage, username, githubLink }) => (
       <a target="_blank" href={githubLink}>
         <Icon name='github' />
       </a>
-      <Link to={`/repositories/${id}`}>
+      <Link to={`/repositories/${username}`}>
         <Icon name="user" />
       </Link>
     </Card.Content>
