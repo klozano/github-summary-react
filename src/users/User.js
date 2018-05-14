@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import { Card, Image, Icon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
@@ -20,5 +21,12 @@ const User = ({ id, profileImage, username, githubLink }) => (
     </Card.Content>
   </Card>
 );
+
+User.propTypes = {
+  id: PropTypes.string.isRequired,
+  profileImage: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
+  githubLink: PropTypes.string.isRequired
+}
 
 export default User;
