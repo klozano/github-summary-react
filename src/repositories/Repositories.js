@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import queryString from 'query-string';
 import { Grid } from 'semantic-ui-react';
 
+import Repository from './Repository';
+
 const REPO_PAGE_SIZE = 4;
 class Repositories extends React.Component {
   constructor() {
@@ -34,9 +36,16 @@ class Repositories extends React.Component {
     return (
       <Grid container columns={4}>
         {
-          repositories.map((repo) => (
-            <Grid.Column key={repo.id}>
-              <div> {repo.name} </div>
+          repositories.map(({ id, name, full_name, description, html_url, forks, open_issues_count, open_issues }) => (
+            <Grid.Column key={id}>
+              <Repository
+                name={name}
+                fullname={full_name}
+                description={description}
+                url={html_url}
+                issues={open_issues}
+                openedIssues={open_issues_count}
+                forks={forks}/>
             </Grid.Column>
           ))
         }
