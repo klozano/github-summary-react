@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Button } from 'semantic-ui-react';
+import { Grid, Button, Segment } from 'semantic-ui-react';
 import _last from 'lodash/last';
 
 import User from './User';
@@ -58,7 +58,9 @@ export default class Users extends React.Component {
             ))
           }
         </Grid>
-        <Button fluid onClick={this._onLoadMore} loading={loading}>Load more...</Button>
+        <Segment basic>
+          <Button fluid onClick={this._onLoadMore} loading={loading}>Load more...</Button>
+        </Segment>
       </React.Fragment>
     );
   }
