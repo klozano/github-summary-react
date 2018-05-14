@@ -23,7 +23,7 @@ const User = ({ id, profileImage, username, githubLink }) => (
 );
 
 User.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   profileImage: PropTypes.string.isRequired,
   username: PropTypes.string.isRequired,
   githubLink: PropTypes.string.isRequired
