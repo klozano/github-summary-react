@@ -7,9 +7,8 @@ const Repository = ({ name, fullname, description, url, issues, openedIssues, fo
     <Card.Content>
       <Card.Header>
         <a target="_blank" href={url}>
-          <Icon name="github" />
+          {name}
         </a>
-        {name}
       </Card.Header>
       <Card.Meta>{fullname}</Card.Meta>
       {
