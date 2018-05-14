@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import queryString from 'query-string';
+import { Grid } from 'semantic-ui-react';
 
 const REPO_PAGE_SIZE = 4;
 class Repositories extends React.Component {
@@ -23,14 +24,24 @@ class Repositories extends React.Component {
       .then(response => response.json())
       .then(
         repositories => {
-          console.log(repositories);
+          this.setState({ repositories, loading: false });
         }
       )
   }
 
   render() {
-    const { match } = this.props;
-    return <div>{match.params.username}</div>
+    const { repositories } = this.state;
+    return (
+      <Grid container columns={4}>
+        {
+          repositories.map((repo) => (
+            <Grid.Column key={repo.id}>
+              <div> {repo.name} </div>
+            </Grid.Column>
+          ))
+        }
+      </Grid>
+    );
   }
 }
 
